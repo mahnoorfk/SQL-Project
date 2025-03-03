@@ -6,9 +6,14 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 SQL Queries:
 
+SELECT *
+FROM all_sessions
+WHERE transacrevenue IS NOT NULL
+ORDER BY transacrevenue DESC
 
 
-Answer:
+Answer: Country: USA
+	City: Only Sunnyvale is stated  
 
 
 
@@ -18,6 +23,11 @@ Answer:
 
 SQL Queries:
 
+SELECT AVG(p.orderedquantity), a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+GROUP BY a.city, a.country
 
 
 Answer:
@@ -31,9 +41,36 @@ Answer:
 
 SQL Queries:
 
+SELECT a.v2prodcategory, p.prodname, a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+WHERE a.country = 'Canada' AND a.city = 'Vancouver'
+ORDER BY a.v2prodcategory
+
+SELECT a.v2prodcategory, p.prodname, a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+WHERE a.country = 'Canada' AND a.city = 'Toronto'
+ORDER BY a.v2prodcategory
+
+SELECT a.v2prodcategory, p.prodname, a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+WHERE a.country = 'United States' AND a.city = 'Los Angeles'
+ORDER BY a.v2prodcategory
+
+SELECT a.v2prodcategory, p.prodname, a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+WHERE a.country = 'United Kingdom' AND a.city = 'London'
+ORDER BY a.v2prodcategory
 
 
-Answer:
+Answer: No patterns found
 
 
 
