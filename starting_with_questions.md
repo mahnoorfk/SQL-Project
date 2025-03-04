@@ -6,11 +6,14 @@ Answer the following questions and provide the SQL queries used to find the answ
 
 SQL Queries:
 
+```
 SELECT city, country, SUM(totaltransacrev)
 FROM all_sessions
 WHERE totaltransacrev IS NOT NULL
 GROUP BY city, country
 ORDER BY SUM(totaltransacrev) DESC
+
+```
 
 
 Answer: Country: USA
