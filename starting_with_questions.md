@@ -30,7 +30,7 @@ Cities: As seen in the image below
 SQL Queries:
 
 ```
-SELECT AVG(p.orderedquantity), a.city, a.country
+SELECT a.country, a.city, AVG(p.orderedquantity) AS avg_ordered
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -40,7 +40,7 @@ GROUP BY a.city, a.country
 
 Answer:
 
-
+![Q2 Ans](https://github.com/user-attachments/assets/72ff3cdc-ba22-482d-b6f4-d076063fc64d)
 
 
 
