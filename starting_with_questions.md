@@ -56,7 +56,6 @@ INNER JOIN products p
 ON a.prodsku = p.sku 
 WHERE a.country = 'Canada' 
 ORDER BY a.v2prodcategory
-
 ```
 ```
 SELECT p.prodname, a.v2prodcategory, a.city, a.country
@@ -65,7 +64,6 @@ INNER JOIN products p
 ON a.prodsku = p.sku 
 WHERE a.country = 'Canada' AND a.city = 'Vancouver'
 ORDER BY a.v2prodcategory
-
 ```
 ```
 SELECT p.prodname, a.v2prodcategory, a.city, a.country
@@ -74,7 +72,6 @@ INNER JOIN products p
 ON a.prodsku = p.sku 
 WHERE a.country = 'Canada' AND a.city = 'Toronto'
 ORDER BY a.v2prodcategory
-
 ```
 ```
 SELECT p.prodname, a.v2prodcategory, a.city, a.country
@@ -83,7 +80,6 @@ INNER JOIN products p
 ON a.prodsku = p.sku 
 WHERE a.country = 'United States' AND a.city = 'Los Angeles'
 ORDER BY a.v2prodcategory
-
 ```
 ```
 SELECT p.prodname, a.v2prodcategory, a.city, a.country
@@ -92,7 +88,6 @@ INNER JOIN products p
 ON a.prodsku = p.sku 
 WHERE a.country = 'United Kingdom' AND a.city = 'London'
 ORDER BY a.v2prodcategory
-
 ```
 
 
@@ -127,12 +122,14 @@ ranked AS
 SELECT * 
 FROM ranked
 WHERE rankedcountry = 1
-
 ```
 
 
 Answer: 
 By scanning the data, it looks like 'Custom Decals' is a popular product in many countries such as Australia, Italy and South Korea. 
+
+![image](https://github.com/user-attachments/assets/b3adb490-50f3-4cdb-b488-a5408c317874)
+
 
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
