@@ -29,12 +29,19 @@ Answer:
 
 
 
-Question 3: 
+Question 3: To help analyze website traffic patterns, return the list of unique countries who's website traffic source is 'Paid Search'
 
 SQL Queries:
 
+```
+SELECT DISTINCT(country), channelgrouping
+FROM all_sessions
+WHERE channelgrouping = 'Paid Search'
+```
+
 Answer:
 
+![OwnQ3](https://github.com/user-attachments/assets/87e870fc-29b4-4465-ba65-1c5ab58a2580)
 
 
 Question 4: 
