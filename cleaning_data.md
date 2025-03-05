@@ -1,4 +1,5 @@
 What issues will you address by cleaning the data?
+
 -Getting rid of incorrect values
 -Getting rid of null values 
 
