@@ -16,22 +16,24 @@ ORDER BY SUM(totaltransacrev) DESC
 ```
 
 
-Answer: Country: USA
-	City: Only Sunnyvale is stated  
-
-
-
+Answer: 
+Countries: United States, Israel, Canada, Australia, Switzerland
+Cities: 
+ 
 
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
 
 
 SQL Queries:
 
+```
 SELECT AVG(p.orderedquantity), a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
 GROUP BY a.city, a.country
+
+```
 
 
 Answer:
@@ -45,6 +47,16 @@ Answer:
 
 SQL Queries:
 
+```
+SELECT a.v2prodcategory, p.prodname, a.city, a.country
+FROM all_sessions a
+INNER JOIN products p
+ON a.prodsku = p.sku 
+WHERE a.country = 'Canada' 
+ORDER BY a.v2prodcategory
+
+```
+```
 SELECT a.v2prodcategory, p.prodname, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
@@ -52,6 +64,8 @@ ON a.prodsku = p.sku
 WHERE a.country = 'Canada' AND a.city = 'Vancouver'
 ORDER BY a.v2prodcategory
 
+```
+```
 SELECT a.v2prodcategory, p.prodname, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
@@ -59,6 +73,8 @@ ON a.prodsku = p.sku
 WHERE a.country = 'Canada' AND a.city = 'Toronto'
 ORDER BY a.v2prodcategory
 
+```
+```
 SELECT a.v2prodcategory, p.prodname, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
@@ -66,6 +82,8 @@ ON a.prodsku = p.sku
 WHERE a.country = 'United States' AND a.city = 'Los Angeles'
 ORDER BY a.v2prodcategory
 
+```
+```
 SELECT a.v2prodcategory, p.prodname, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
@@ -73,11 +91,11 @@ ON a.prodsku = p.sku
 WHERE a.country = 'United Kingdom' AND a.city = 'London'
 ORDER BY a.v2prodcategory
 
-
-Answer: No patterns found
-
+```
 
 
+Answer: 
+No patterns found
 
 
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
@@ -85,15 +103,35 @@ Answer: No patterns found
 
 SQL Queries:
 
+```
+WITH prodquantitybycountry AS 
+(	SELECT a.country, p.prodname, SUM(p.orderedquantity) AS total_ordered
+	FROM all_sessions a
+	INNER JOIN products p
+	ON a.prodsku = p.sku
+	GROUP BY a.country, p.prodname
+	ORDER BY total_ordered DESC
+),
+
+ranked AS 
+(	SELECT *,
+ 	RANK() OVER (PARTITION BY country ORDER BY total_ordered DESC) AS rankedcountry
+ FROM prodquantitybycountry
+)
+
+SELECT * 
+FROM ranked
+WHERE rankedcountry = 1
+
+```
 
 
-Answer:
-
-
-
+Answer: 
+By scanning the data, it looks like 'Custom Decals' is a popular product in many countries such as Australia, Italy and South Korea. 
 
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
+
 
 SQL Queries:
 

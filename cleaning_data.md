@@ -1,5 +1,6 @@
 What issues will you address by cleaning the data?
-Get rid of nulls 
+-Getting rid of incorrect values
+-Getting rid of null values 
 
 
 
@@ -8,6 +9,22 @@ Get rid of nulls
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
+--Getting rid of incorrect values
+
+```
+SELECT *
+FROM all_sessions
+WHERE city NOT LIKE '%not%'
+
+```
+--Getting rid of null values
+
+```
+SELECT *
+FROM all_sessions
+WHERE transacrevenue IS NOT NULL
+
+```
 --Checking for duplicates for fullvisitorid(primary key):
 
 SELECT fullvisitorid, COUNT(*)
