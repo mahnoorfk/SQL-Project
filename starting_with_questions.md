@@ -50,7 +50,7 @@ Answer:
 SQL Queries:
 
 ```
-SELECT a.v2prodcategory, p.prodname, a.city, a.country
+SELECT p.prodname, a.v2prodcategory, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -59,7 +59,7 @@ ORDER BY a.v2prodcategory
 
 ```
 ```
-SELECT a.v2prodcategory, p.prodname, a.city, a.country
+SELECT p.prodname, a.v2prodcategory, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -68,7 +68,7 @@ ORDER BY a.v2prodcategory
 
 ```
 ```
-SELECT a.v2prodcategory, p.prodname, a.city, a.country
+SELECT p.prodname, a.v2prodcategory, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -77,7 +77,7 @@ ORDER BY a.v2prodcategory
 
 ```
 ```
-SELECT a.v2prodcategory, p.prodname, a.city, a.country
+SELECT p.prodname, a.v2prodcategory, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -86,7 +86,7 @@ ORDER BY a.v2prodcategory
 
 ```
 ```
-SELECT a.v2prodcategory, p.prodname, a.city, a.country
+SELECT p.prodname, a.v2prodcategory, a.city, a.country
 FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
@@ -97,7 +97,10 @@ ORDER BY a.v2prodcategory
 
 
 Answer: 
-No patterns found
+No patterns found. 
+
+![Q3 Ans](https://github.com/user-attachments/assets/87d947ed-3f8c-44c9-927b-48187bab64b5)
+
 
 
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
