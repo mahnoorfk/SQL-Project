@@ -1,4 +1,4 @@
-Question 1: List the ordered product names that are not in stock 
+**Question 1: List the ordered product names that are not in stock**
 
 SQL Queries:
 
@@ -14,7 +14,7 @@ Answer:
 
 
 
-Question 2: List the unique product prices
+**Question 2: List the unique product prices**
 
 SQL Queries:
 
@@ -29,7 +29,7 @@ Answer:
 
 
 
-Question 3: To help analyze website traffic patterns, return the list of unique countries who's website traffic source is 'Paid Search'
+**Question 3: To help analyze website traffic patterns, return the list of unique countries who's website traffic source is 'Paid Search'**
 
 SQL Queries:
 
