@@ -21,6 +21,11 @@ SELECT *
 FROM all_sessions
 WHERE country NOT LIKE '%not%'
 ```
+```
+SELECT *
+FROM all_sessions
+WHERE v2prodcategory NOT LIKE '%not%'
+```
 --Getting rid of null values
 
 ```
