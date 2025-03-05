@@ -15,7 +15,11 @@ Below, provide the SQL queries you used to clean your data.
 SELECT *
 FROM all_sessions
 WHERE city NOT LIKE '%not%'
-
+```
+```
+SELECT *
+FROM all_sessions
+WHERE country NOT LIKE '%not%'
 ```
 --Getting rid of null values
 
