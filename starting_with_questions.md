@@ -18,7 +18,11 @@ ORDER BY SUM(totaltransacrev) DESC
 
 Answer: 
 Countries: United States, Israel, Canada, Australia, Switzerland
-Cities: 
+
+Cities: As seen in the image below
+
+![Q1 Ans](https://github.com/user-attachments/assets/58a6532d-6ebb-41cc-9d16-8c8640022f14)
+
  
 
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
