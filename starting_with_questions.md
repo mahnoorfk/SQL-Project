@@ -12,7 +12,6 @@ FROM all_sessions
 WHERE totaltransacrev IS NOT NULL
 GROUP BY city, country
 ORDER BY SUM(totaltransacrev) DESC
-
 ```
 
 
@@ -36,7 +35,6 @@ FROM all_sessions a
 INNER JOIN products p
 ON a.prodsku = p.sku 
 GROUP BY a.city, a.country
-
 ```
 
 
