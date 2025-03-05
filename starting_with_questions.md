@@ -137,13 +137,12 @@ By scanning the data, it looks like 'Custom Decals' is a popular product in many
 
 SQL Queries:
 
+```
+SELECT country, city, SUM(totaltransacrev)
+FROM all_sessions
+WHERE totaltransacrev IS NOT NULL
+GROUP BY country, city
+```
 
-
-Answer:
-
-
-
-
-
-
-
+Answer: 
+It is difficult to create summaries of the total transaction revenue for each city/country as only 21 rows are returned for the above query out of 15,134 rows. That is 0.1% of data available. The total transaction revenue data is only available for 5 countries (United States, Israel, Canada, Australia, Switzerland). From the results, it is clear that United States has generated the highest amount of revenue and Switzerland has generated the least amount of of revenue. 
